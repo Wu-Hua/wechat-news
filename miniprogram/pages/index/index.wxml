@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<!-- nav -->
+<view class='nav'>
+  <view class='nav-top'>
+    <image class='nav-icon' src='../../images/news-icon.svg'></image>
+    <view class='nav-title'>快读 · 资讯</view>
+  </view>
+
+  <scroll-view scroll-x>
+    <view class='nav-bottom'>
+      <view class='nav-list'>
+        <view wx:for="{{navItem}}" class='nav-item {{navActiveStyle}}' bindtap="clickNavBarItem">{{item}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- nav end  -->
+
+<view class="container">
+  <!-- gn news -->
+  <view class='gn-news'>gn-news</view>
+  <!-- gn news end -->
+
+  <!-- gj news -->
+  <view class='gj-news'>gj-news</view>
+  <!-- gj news end -->
+
+  <!-- cj news -->
+  <view class='cj-news'>cj-news</view>
+  <!-- cj news end -->
+
+  <!-- yl news -->
+  <view class='yl-news'>yl-news</view>
+  <!-- yl news end -->
+
+  <!-- js news -->
+  <view class='js-news'>js-news</view>
+  <!-- js news end -->
+
+  <!-- ty news -->
+  <view class='ty-news'>ty-news</view>
+  <!-- ty news end -->
+
+  <!-- other news -->
+  <view class='other-news'>other-news</view>
+  <!-- other news end -->
+
+</view>

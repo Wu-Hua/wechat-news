@@ -1,0 +1,43 @@
+/* nav */
+.nav {
+  padding-top: 60rpx;
+  background: -webkit-linear-gradient(right top, #31a5ee , #2985cb);
+  background: -o-linear-gradient(bottom left, #31a5ee , #2985cb);
+  background: -moz-linear-gradient(bottom left, #31a5ee , #2985cb);
+  background: linear-gradient(to bottom left, #31a5ee , #2985cb); 
+}
+.nav-top {
+  display: flex;
+  margin-left: 30rpx;
+  color: #fff;
+}
+.nav-icon {
+  width: 50rpx;
+  height: 50rpx;
+  padding: 10rpx;
+  background: #fff;
+  border-radius: 50rpx;
+  margin-right: 5rpx;
+}
+.nav-title {
+  padding: 10rpx;
+  font-size: 35rpx;
+}
+.nav-bottom {
+  color: rgba(255, 255, 255, 0.8);
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+}
+.nav-list {
+  display: flex;
+}
+.nav-item {
+  padding: 30rpx 0;
+  width: 100rpx;
+  text-align: center;
+  font-size: 35rpx;
+}
+.nav-item-active {
+  color: #fff;
+}
+/* nav end */
