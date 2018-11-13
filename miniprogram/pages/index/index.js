@@ -5,8 +5,73 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navItem: ['国内', '国际', '财经', '娱乐', '军事', '体育', '其他'],
-    navActiveStyle: ''
+    navItem: [
+      {
+        newType: '国内',
+        styles: 'nav-item nav-item-active',
+        id: 0
+      }, 
+      {
+        newType: '国际',
+        styles: 'nav-item',
+        id: 1        
+      },
+      {
+        newType: '财经',
+        styles: 'nav-item',
+        id: 2        
+      },
+      {
+        newType: '娱乐',
+        styles: 'nav-item',
+        id: 3        
+      },
+      {
+        newType: '军事',
+        styles: 'nav-item',
+        id: 4        
+      },
+      {
+        newType: '体育',
+        styles: 'nav-item',
+        id: 5        
+      },
+      {
+        newType: '其他',
+        styles: 'nav-item',
+        id: 6        
+      }
+    ],
+    newsContent: [
+      {
+        id: 0,
+        styles: 'styles'
+      },
+      {
+        id: 1,
+        styles: 'styles hide'
+      },
+      {
+        id: 2,
+        styles: 'styles hide'
+      },
+      {
+        id: 3,
+        styles: 'styles hide'
+      },
+      {
+        id: 4,
+        styles: 'styles hide'
+      },
+      {
+        id: 5,
+        styles: 'styles hide'
+      },
+      {
+        id: 6,
+        styles: 'styles hide'
+      }
+    ]
   },
 
   /**
@@ -74,7 +139,10 @@ Page({
         type: 'gn'
       },
       success: res => {
-        const result = res.data.result;
+        const news = res.data.result;
+        const newsLength = news.length;
+        console.log(news);
+        console.log(newsLength);
       },
       complete: () => {
         callback && callback();
@@ -83,6 +151,34 @@ Page({
   },
 
   clickNavBarItem(e) {
-    
+    let navItem = [];
+    let newsContent = [];
+    for(let i = 0; i < 7 ; i++ ) {
+      navItem.push({
+        newType: '',
+        styles: 'nav-item',
+        id: i
+      });
+      newsContent.push({
+        content: '',
+        styles: 'styles hide',
+        id: i
+      })
+    }
+    navItem[0].newType = '国内';
+    navItem[1].newType = '国际';
+    navItem[2].newType = '财经';
+    navItem[3].newType = '娱乐';
+    navItem[4].newType = '军事';
+    navItem[5].newType = '体育';
+    navItem[6].newType = '其他';
+
+    const targetId = e.target.dataset.id;
+    navItem[targetId].styles = 'nav-item nav-item-active';
+    newsContent[targetId].styles = 'styles';
+    this.setData({
+      navItem : navItem,
+      newsContent: newsContent
+    })
   }
 })

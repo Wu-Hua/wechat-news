@@ -1,6 +1,6 @@
 /* nav */
 .nav {
-  padding-top: 60rpx;
+  padding-top: 80rpx;
   background: -webkit-linear-gradient(right top, #31a5ee , #2985cb);
   background: -o-linear-gradient(bottom left, #31a5ee , #2985cb);
   background: -moz-linear-gradient(bottom left, #31a5ee , #2985cb);
@@ -32,12 +32,23 @@
   display: flex;
 }
 .nav-item {
-  padding: 30rpx 0;
-  width: 100rpx;
+  padding: 5rpx 0;
+  margin: 25rpx 10rpx;
+  width: 80rpx;
   text-align: center;
   font-size: 35rpx;
 }
 .nav-item-active {
   color: #fff;
+  border-bottom: 3px solid #fff;
 }
 /* nav end */
+/* main */
+.styles {
+  font-size: 60rpx;
+  text-align: center;
+}
+.hide {
+  display: none;
+}
+/* main end */
