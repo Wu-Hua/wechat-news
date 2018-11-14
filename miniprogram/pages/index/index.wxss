@@ -1,10 +1,14 @@
 /* nav */
 .nav {
   padding-top: 80rpx;
+  width: 100%;
   background: -webkit-linear-gradient(right top, #31a5ee , #2985cb);
   background: -o-linear-gradient(bottom left, #31a5ee , #2985cb);
   background: -moz-linear-gradient(bottom left, #31a5ee , #2985cb);
-  background: linear-gradient(to bottom left, #31a5ee , #2985cb); 
+  background: linear-gradient(to bottom left, #31a5ee , #2985cb);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .nav-top {
   display: flex;
@@ -44,11 +48,13 @@
 }
 /* nav end */
 /* main */
-.styles {
-  font-size: 60rpx;
-  text-align: center;
+.main {
+  padding: 260rpx 15rpx 0rpx;
 }
 .hide {
   display: none;
+}
+.gj {
+  color: red;
 }
 /* main end */

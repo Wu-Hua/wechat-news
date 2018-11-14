@@ -16,11 +16,27 @@
 </view>
 <!-- nav end  -->
 <!-- main -->
-<view class="container" wx:for="{{newsContent}}">
-  <view class="{{item.styles}}" data-id="{{item.id}}">
-    <view>
-      abc
-    </view>
+<view class="main">
+  <view wx:for="{{gnNews}}" class="{{newsShow[0].show === true? '':'hide'}}">
+    {{item.title}}
+  </view>
+  <view wx:for="{{gjNews}}" class="gj {{newsShow[1].show === true? '':'hide'}}">
+    {{item.title}}
+  </view>
+  <view wx:for="{{cjNews}}" class="{{newsShow[2].show === true? '':'hide'}}">
+    {{item.title}}
+  </view>
+  <view wx:for="{{ylNews}}" class="gj {{newsShow[3].show === true? '':'hide'}}">
+    {{item.title}}
+  </view>
+  <view wx:for="{{jsNews}}" class="{{newsShow[4].show === true? '':'hide'}}">
+    {{item.title}}
+  </view>
+  <view wx:for="{{tyNews}}" class="gj {{newsShow[5].show === true? '':'hide'}}">
+    {{item.title}}
+  </view>
+  <view wx:for="{{otherNews}}" class="{{newsShow[6].show === true? '':'hide'}}">
+    {{item.title}}
   </view>
 </view>
 <!-- main end -->

@@ -42,43 +42,35 @@ Page({
         id: 6        
       }
     ],
-    newsContent: [
-      {
-        id: 0,
-        styles: 'styles'
-      },
-      {
-        id: 1,
-        styles: 'styles hide'
-      },
-      {
-        id: 2,
-        styles: 'styles hide'
-      },
-      {
-        id: 3,
-        styles: 'styles hide'
-      },
-      {
-        id: 4,
-        styles: 'styles hide'
-      },
-      {
-        id: 5,
-        styles: 'styles hide'
-      },
-      {
-        id: 6,
-        styles: 'styles hide'
-      }
-    ]
+    newsShow: [
+      {show: true},
+      { show: false },
+      { show: false },
+      { show: false },
+      { show: false },
+      { show: false },
+      { show: false }
+    ],
+    gnNews: null,
+    gjNews: null,
+    cjNews: null,
+    ylNews: null,
+    jsNews: null,
+    tyNews: null,
+    otherNews: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getNews();
+    this.getGnNews();
+    this.getGjNews();
+    this.getCjNews();
+    this.getYlNews();
+    this.getJsNews();
+    this.getTyNews();
+    this.getOtherNews();
   },
 
   /**
@@ -113,7 +105,25 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.getNews(() => {
+    this.getGnNews(() => {
+      wx.stopPullDownRefresh()
+    });
+    this.getGjNews(() => {
+      wx.stopPullDownRefresh()
+    });
+    this.getCjNews(() => {
+      wx.stopPullDownRefresh()
+    });
+    this.getYlNews(() => {
+      wx.stopPullDownRefresh()
+    });
+    this.getGsNews(() => {
+      wx.stopPullDownRefresh()
+    });
+    this.getTyNews(() => {
+      wx.stopPullDownRefresh()
+    });
+    this.getOtherNews(() => {
       wx.stopPullDownRefresh()
     });
   },
@@ -132,7 +142,7 @@ Page({
 
   },
 
-  getNews(callback){
+  getGnNews(callback){
     wx.request({
       url: 'https://test-miniprogram.com/api/news/list', //仅为示例，并非真实的接口地址
       data: {
@@ -141,8 +151,188 @@ Page({
       success: res => {
         const news = res.data.result;
         const newsLength = news.length;
-        console.log(news);
-        console.log(newsLength);
+        let gnNews = [];
+        for(let i = 0 ; i < newsLength; i++) {
+          gnNews.push({
+            title: news[i].title,
+            date: news[i].date,
+            source: news[i].source,
+            firstImage: news[i].firstImage
+          })
+        }
+        this.setData({
+          gnNews: gnNews
+        })
+        console.log(this.data.gnNews);
+      },
+      complete: () => {
+        callback && callback();
+      }
+    });
+  },
+
+
+  getGjNews(callback) {
+    wx.request({
+      url: 'https://test-miniprogram.com/api/news/list', //仅为示例，并非真实的接口地址
+      data: {
+        type: 'gj'
+      },
+      success: res => {
+        const news = res.data.result;
+        const newsLength = news.length;
+        let gjNews = [];
+        for (let i = 0; i < newsLength; i++) {
+          gjNews.push({
+            title: news[i].title,
+            date: news[i].date,
+            source: news[i].source,
+            firstImage: news[i].firstImage
+          })
+        }
+        this.setData({
+          gjNews: gjNews
+        })
+      },
+      complete: () => {
+        callback && callback();
+      }
+    });
+  },
+
+  getCjNews(callback) {
+    wx.request({
+      url: 'https://test-miniprogram.com/api/news/list', //仅为示例，并非真实的接口地址
+      data: {
+        type: 'cj'
+      },
+      success: res => {
+        const news = res.data.result;
+        const newsLength = news.length;
+        let cjNews = [];
+        for (let i = 0; i < newsLength; i++) {
+          cjNews.push({
+            title: news[i].title,
+            date: news[i].date,
+            source: news[i].source,
+            firstImage: news[i].firstImage
+          })
+        }
+        this.setData({
+          cjNews: cjNews
+        })
+      },
+      complete: () => {
+        callback && callback();
+      }
+    });
+  },
+
+  getYlNews(callback) {
+    wx.request({
+      url: 'https://test-miniprogram.com/api/news/list', //仅为示例，并非真实的接口地址
+      data: {
+        type: 'yl'
+      },
+      success: res => {
+        const news = res.data.result;
+        const newsLength = news.length;
+        let ylNews = [];
+        for (let i = 0; i < newsLength; i++) {
+          ylNews.push({
+            title: news[i].title,
+            date: news[i].date,
+            source: news[i].source,
+            firstImage: news[i].firstImage
+          })
+        }
+        this.setData({
+          ylNews: ylNews
+        })
+      },
+      complete: () => {
+        callback && callback();
+      }
+    });
+  },
+
+  getJsNews(callback) {
+    wx.request({
+      url: 'https://test-miniprogram.com/api/news/list', //仅为示例，并非真实的接口地址
+      data: {
+        type: 'js'
+      },
+      success: res => {
+        const news = res.data.result;
+        const newsLength = news.length;
+        let jsNews = [];
+        for (let i = 0; i < newsLength; i++) {
+          jsNews.push({
+            title: news[i].title,
+            date: news[i].date,
+            source: news[i].source,
+            firstImage: news[i].firstImage
+          })
+        }
+        this.setData({
+          jsNews: jsNews
+        })
+      },
+      complete: () => {
+        callback && callback();
+      }
+    });
+  },
+
+  getTyNews(callback) {
+    wx.request({
+      url: 'https://test-miniprogram.com/api/news/list', //仅为示例，并非真实的接口地址
+      data: {
+        type: 'ty'
+      },
+      success: res => {
+        const news = res.data.result;
+        const newsLength = news.length;
+        let tyNews = [];
+        for (let i = 0; i < newsLength; i++) {
+          tyNews.push({
+            title: news[i].title,
+            date: news[i].date,
+            source: news[i].source,
+            firstImage: news[i].firstImage
+          })
+        }
+        this.setData({
+          tyNews: tyNews
+        })
+      },
+      complete: () => {
+        callback && callback();
+      }
+    });
+  },
+
+  getOtherNews(callback) {
+    wx.request({
+      url: 'https://test-miniprogram.com/api/news/list', //仅为示例，并非真实的接口地址
+      data: {
+        type: 'other'
+      },
+      success: res => {
+        const news = res.data.result;
+        const newsLength = news.length;
+        let otherNews = [];
+        for (let i = 0; i < newsLength; i++) {
+          otherNews.push({
+            title: news[i].title,
+            date: news[i].date,
+            source: news[i].source,
+            firstImage: news[i].firstImage
+          })
+        }
+        this.setData({
+          otherNews: otherNews
+        })
       },
       complete: () => {
         callback && callback();
@@ -153,16 +343,15 @@ Page({
   clickNavBarItem(e) {
     let navItem = [];
     let newsContent = [];
+    let newsShow = [];
     for(let i = 0; i < 7 ; i++ ) {
       navItem.push({
         newType: '',
         styles: 'nav-item',
         id: i
       });
-      newsContent.push({
-        content: '',
-        styles: 'styles hide',
-        id: i
+      newsShow.push({
+        show: false
       })
     }
     navItem[0].newType = '国内';
@@ -175,10 +364,10 @@ Page({
 
     const targetId = e.target.dataset.id;
     navItem[targetId].styles = 'nav-item nav-item-active';
-    newsContent[targetId].styles = 'styles';
+    newsShow[targetId].show = true;
     this.setData({
       navItem : navItem,
-      newsContent: newsContent
+      newsShow: newsShow
     })
   }
 })
