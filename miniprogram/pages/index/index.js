@@ -117,7 +117,7 @@ Page({
     this.getYlNews(() => {
       wx.stopPullDownRefresh()
     });
-    this.getGsNews(() => {
+    this.getJsNews(() => {
       wx.stopPullDownRefresh()
     });
     this.getTyNews(() => {
@@ -152,10 +152,13 @@ Page({
         const news = res.data.result;
         const newsLength = news.length;
         let gnNews = [];
+        console.log(res);
         for(let i = 0 ; i < newsLength; i++) {
           gnNews.push({
+            id: news[i].id,
             title: news[i].title,
             date: news[i].date,
+            time: news[i].date.substring(11, 16),
             source: news[i].source,
             firstImage: news[i].firstImage
           })
@@ -163,7 +166,6 @@ Page({
         this.setData({
           gnNews: gnNews
         })
-        console.log(this.data.gnNews);
       },
       complete: () => {
         callback && callback();
@@ -184,8 +186,10 @@ Page({
         let gjNews = [];
         for (let i = 0; i < newsLength; i++) {
           gjNews.push({
+            id: news[i].id,
             title: news[i].title,
             date: news[i].date,
+            time: news[i].date.substring(11, 16),
             source: news[i].source,
             firstImage: news[i].firstImage
           })
@@ -212,8 +216,10 @@ Page({
         let cjNews = [];
         for (let i = 0; i < newsLength; i++) {
           cjNews.push({
+            id: news[i].id,
             title: news[i].title,
             date: news[i].date,
+            time: news[i].date.substring(11, 16),
             source: news[i].source,
             firstImage: news[i].firstImage
           })
@@ -240,8 +246,10 @@ Page({
         let ylNews = [];
         for (let i = 0; i < newsLength; i++) {
           ylNews.push({
+            id: news[i].id,
             title: news[i].title,
             date: news[i].date,
+            time: news[i].date.substring(11, 16),
             source: news[i].source,
             firstImage: news[i].firstImage
           })
@@ -268,12 +276,15 @@ Page({
         let jsNews = [];
         for (let i = 0; i < newsLength; i++) {
           jsNews.push({
+            id: news[i].id,
             title: news[i].title,
             date: news[i].date,
+            time: news[i].date.substring(11, 16),
             source: news[i].source,
             firstImage: news[i].firstImage
           })
         }
+        jsNews[0].firstImage = ''
         this.setData({
           jsNews: jsNews
         })
@@ -296,8 +307,10 @@ Page({
         let tyNews = [];
         for (let i = 0; i < newsLength; i++) {
           tyNews.push({
+            id: news[i].id,
             title: news[i].title,
             date: news[i].date,
+            time: news[i].date.substring(11, 16),
             source: news[i].source,
             firstImage: news[i].firstImage
           })
@@ -324,8 +337,10 @@ Page({
         let otherNews = [];
         for (let i = 0; i < newsLength; i++) {
           otherNews.push({
+            id: news[i].id,
             title: news[i].title,
             date: news[i].date,
+            time: news[i].date.substring(11, 16),
             source: news[i].source,
             firstImage: news[i].firstImage
           })

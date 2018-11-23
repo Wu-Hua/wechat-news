@@ -18,25 +18,151 @@
 <!-- main -->
 <view class="main">
   <view wx:for="{{gnNews}}" class="{{newsShow[0].show === true? '':'hide'}}">
-    {{item.title}}
+    <view class='news-box'>
+      <view class='news-box-top'>
+        <view class='news-title'>{{item.title}}</view>
+        <view wx:if="item.source == ''">
+          <view class='news-source'>来源无 {{item.time}}</view>
+        </view>
+        <view wx:else="item.source !== ''">
+          <view class='news-source'>{{item.source}} {{item.time}}</view>
+        </view>
+      </view>
+      <view class='news-box-bottom'>
+        <view wx:if="{{item.firstImage == ''}}">
+          <image class='news-image' src='../../images/none-image.jpg'></image>
+        </view>
+        <view wx:else="{{item.firstImage !== ''}}">
+          <image class='news-image' src='{{item.firstImage}}'></image>
+        </view>
+      </view>
+    </view>
   </view>
-  <view wx:for="{{gjNews}}" class="gj {{newsShow[1].show === true? '':'hide'}}">
-    {{item.title}}
+  <view wx:for="{{gjNews}}" class="{{newsShow[1].show === true? '':'hide'}}">
+    <view class='news-box'>
+      <view class='news-box-top'>
+        <view class='news-title'>{{item.title}}</view>
+        <view wx:if="item.source == ''">
+          <view class='news-source'>来源无 {{item.time}}</view>
+        </view>
+        <view wx:else="item.source !== ''">
+          <view class='news-source'>{{item.source}} {{item.time}}</view>
+        </view>
+      </view>
+      <view class='news-box-bottom'>
+        <view wx:if="{{item.firstImage == ''}}">
+          <image class='news-image' src='../../images/none-image.jpg'></image>
+        </view>
+        <view wx:else="{{item.firstImage !== ''}}">
+          <image class='news-image' src='{{item.firstImage}}'></image>
+        </view>
+      </view>
+    </view>
   </view>
   <view wx:for="{{cjNews}}" class="{{newsShow[2].show === true? '':'hide'}}">
-    {{item.title}}
+    <view class='news-box'>
+      <view class='news-box-top'>
+        <view class='news-title'>{{item.title}}</view>
+        <view wx:if="item.source == ''">
+          <view class='news-source'>来源无 {{item.time}}</view>
+        </view>
+        <view wx:else="item.source !== ''">
+          <view class='news-source'>{{item.source}} {{item.time}}</view>
+        </view>
+      </view>
+      <view class='news-box-bottom'>
+        <view wx:if="{{item.firstImage == ''}}">
+          <image class='news-image' src='../../images/none-image.jpg'></image>
+        </view>
+        <view wx:else="{{item.firstImage !== ''}}">
+          <image class='news-image' src='{{item.firstImage}}'></image>
+        </view>
+      </view>
+    </view>
   </view>
-  <view wx:for="{{ylNews}}" class="gj {{newsShow[3].show === true? '':'hide'}}">
-    {{item.title}}
+  <view wx:for="{{ylNews}}" class="{{newsShow[3].show === true? '':'hide'}}">
+    <view class='news-box'>
+      <view class='news-box-top'>
+        <view class='news-title'>{{item.title}}</view>
+        <view wx:if="item.source == ''">
+          <view class='news-source'>来源无 {{item.time}}</view>
+        </view>
+        <view wx:else="item.source !== ''">
+          <view class='news-source'>{{item.source}} {{item.time}}</view>
+        </view>
+      </view>
+      <view class='news-box-bottom'>
+        <view wx:if="{{item.firstImage == ''}}">
+          <image class='news-image' src='../../images/none-image.jpg'></image>
+        </view>
+        <view wx:else="{{item.firstImage !== ''}}">
+          <image class='news-image' src='{{item.firstImage}}'></image>
+        </view>
+      </view>
+    </view>
   </view>
   <view wx:for="{{jsNews}}" class="{{newsShow[4].show === true? '':'hide'}}">
-    {{item.title}}
+    <view class='news-box'>
+      <view class='news-box-top'>
+        <view class='news-title'>{{item.title}}</view>
+        <view wx:if="item.source == ''">
+          <view class='news-source'>来源无 {{item.time}}</view>
+        </view>
+        <view wx:else="item.source !== ''">
+          <view class='news-source'>{{item.source}} {{item.time}}</view>
+        </view>
+      </view>
+      <view class='news-box-bottom'>
+        <view wx:if="{{item.firstImage == ''}}">
+          <image class='news-image' src='../../images/none-image.jpg'></image>
+        </view>
+        <view wx:else="{{item.firstImage !== ''}}">
+          <image class='news-image' src='{{item.firstImage}}'></image>
+        </view>
+      </view>
+    </view>
   </view>
-  <view wx:for="{{tyNews}}" class="gj {{newsShow[5].show === true? '':'hide'}}">
-    {{item.title}}
+  <view wx:for="{{tyNews}}" class="{{newsShow[5].show === true? '':'hide'}}">
+    <view class='news-box'>
+      <view class='news-box-top'>
+        <view class='news-title'>{{item.title}}</view>
+        <view wx:if="item.source == ''">
+          <view class='news-source'>来源无 {{item.time}}</view>
+        </view>
+        <view wx:else="item.source !== ''">
+          <view class='news-source'>{{item.source}} {{item.time}}</view>
+        </view>
+      </view>
+      <view class='news-box-bottom'>
+        <view wx:if="{{item.firstImage == ''}}">
+          <image class='news-image' src='../../images/none-image.jpg'></image>
+        </view>
+        <view wx:else="{{item.firstImage !== ''}}">
+          <image class='news-image' src='{{item.firstImage}}'></image>
+        </view>
+      </view>
+    </view>
   </view>
   <view wx:for="{{otherNews}}" class="{{newsShow[6].show === true? '':'hide'}}">
-    {{item.title}}
+    <view class='news-box'>
+      <view class='news-box-top'>
+        <view class='news-title'>{{item.title}}</view>
+        <view wx:if="item.source == ''">
+          <view class='news-source'>来源无 {{item.time}}</view>
+        </view>
+        <view wx:else="item.source !== ''">
+          <view class='news-source'>{{item.source}} {{item.time}}</view>
+        </view>
+      </view>
+      <view class='news-box-bottom'>
+        <view wx:if="{{item.firstImage == ''}}">
+          <image class='news-image' src='../../images/none-image.jpg'></image>
+        </view>
+        <view wx:else="{{item.firstImage !== ''}}">
+          <image class='news-image' src='{{item.firstImage}}'></image>
+        </view>
+      </view>
+    </view>
   </view>
 </view>
 <!-- main end -->

@@ -57,4 +57,34 @@
 .gj {
   color: red;
 }
+.news-box {
+  padding: 30rpx 20rpx 15rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+.news-box-top {
+  width: 60%;
+}
+.news-title {
+  font-size: 35rpx;
+  margin-bottom: 20rpx;
+}
+.news-date {
+  font-size: 28rpx;
+  color: #999;
+}
+.news-source {
+  font-size: 28rpx;
+  color: #999;
+}
+.news-box-bottom {
+  width: 35%;
+}
+.news-box-bottom .news-image {
+  width: 100%;
+  /* height: auto; */
+  height: 200rpx;
+}
 /* main end */
