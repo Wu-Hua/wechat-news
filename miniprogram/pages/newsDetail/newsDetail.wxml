@@ -7,8 +7,8 @@
 <view class='main'>
   <view class='title'>{{title}}</view>
   <view class='message'>
-    <view wx:if="source === ''" class='source'>来源无 {{date}}</view>
-    <view wx:else="source !== ''" class='source'>{{source}} {{date}}</view>
+    <view wx:if="{{source === ''}}" class='source'>来源无 {{date}}</view>
+    <view wx:else="{{source !== ''}}" class='source'>{{source}} {{date}}</view>
     <view>阅读 {{readCount}}</view>
   </view>
   <view class='content' wx:for="{{content}}">

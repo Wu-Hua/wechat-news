@@ -24,8 +24,8 @@
         <!-- <view wx:if="item.source == ''">
           <view class='news-source'>来源无 {{item.time}}</view>
         </view> -->
-        <view wx:if="item.source !== ''" class='news-source'>{{item.source}} {{item.time}}</view>
-        <view wx:else="item.source === ''" class='news-source'>来源无 {{item.time}}</view>
+        <view wx:if="{{item.source !== ''}}" class='news-source'>{{item.source}} {{item.time}}</view>
+        <view wx:else="{{item.source === ''}}" class='news-source'>来源无 {{item.time}}</view>
       </view>
       <view class='news-box-bottom'>
         <image wx:if="{{item.firstImage == ''}}" class='news-image' src='../../images/none-image.jpg'></image>
@@ -37,20 +37,12 @@
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
-        <view wx:if="item.source == ''">
-          <view class='news-source'>来源无 {{item.time}}</view>
-        </view>
-        <view wx:else="item.source !== ''">
-          <view class='news-source'>{{item.source}} {{item.time}}</view>
-        </view>
+        <view wx:if="{{item.source !== ''}}" class='news-source'>{{item.source}} {{item.time}}</view>
+        <view wx:else="{{item.source === ''}}" class='news-source'>来源无 {{item.time}}</view>
       </view>
       <view class='news-box-bottom'>
-        <view wx:if="{{item.firstImage == ''}}">
-          <image class='news-image' src='../../images/none-image.jpg'></image>
-        </view>
-        <view wx:else="{{item.firstImage !== ''}}">
-          <image class='news-image' src='{{item.firstImage}}'></image>
-        </view>
+        <image wx:if="{{item.firstImage == ''}}" class='news-image' src='../../images/none-image.jpg'></image>
+        <image wx:else="{{item.firstImage == ''}}" class='news-image' src='{{item.firstImage}}'></image>
       </view>
     </view>
   </view>
@@ -58,20 +50,12 @@
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
-        <view wx:if="item.source == ''">
-          <view class='news-source'>来源无 {{item.time}}</view>
-        </view>
-        <view wx:else="item.source !== ''">
-          <view class='news-source'>{{item.source}} {{item.time}}</view>
-        </view>
+        <view wx:if="{{item.source !== ''}}" class='news-source'>{{item.source}} {{item.time}}</view>
+        <view wx:else="{{item.source === ''}}" class='news-source'>来源无 {{item.time}}</view>
       </view>
       <view class='news-box-bottom'>
-        <view wx:if="{{item.firstImage == ''}}">
-          <image class='news-image' src='../../images/none-image.jpg'></image>
-        </view>
-        <view wx:else="{{item.firstImage !== ''}}">
-          <image class='news-image' src='{{item.firstImage}}'></image>
-        </view>
+        <image wx:if="{{item.firstImage == ''}}" class='news-image' src='../../images/none-image.jpg'></image>
+        <image wx:else="{{item.firstImage == ''}}" class='news-image' src='{{item.firstImage}}'></image>
       </view>
     </view>
   </view>
@@ -79,20 +63,12 @@
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
-        <view wx:if="item.source == ''">
-          <view class='news-source'>来源无 {{item.time}}</view>
-        </view>
-        <view wx:else="item.source !== ''">
-          <view class='news-source'>{{item.source}} {{item.time}}</view>
-        </view>
+        <view wx:if="{{item.source !== ''}}" class='news-source'>{{item.source}} {{item.time}}</view>
+        <view wx:else="{{item.source === ''}}" class='news-source'>来源无 {{item.time}}</view>
       </view>
       <view class='news-box-bottom'>
-        <view wx:if="{{item.firstImage == ''}}">
-          <image class='news-image' src='../../images/none-image.jpg'></image>
-        </view>
-        <view wx:else="{{item.firstImage !== ''}}">
-          <image class='news-image' src='{{item.firstImage}}'></image>
-        </view>
+        <image wx:if="{{item.firstImage == ''}}" class='news-image' src='../../images/none-image.jpg'></image>
+        <image wx:else="{{item.firstImage == ''}}" class='news-image' src='{{item.firstImage}}'></image>
       </view>
     </view>
   </view>
@@ -100,20 +76,12 @@
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
-        <view wx:if="item.source == ''">
-          <view class='news-source'>来源无 {{item.time}}</view>
-        </view>
-        <view wx:else="item.source !== ''">
-          <view class='news-source'>{{item.source}} {{item.time}}</view>
-        </view>
+        <view wx:if="{{item.source !== ''}}" class='news-source'>{{item.source}} {{item.time}}</view>
+        <view wx:else="{{item.source === ''}}" class='news-source'>来源无 {{item.time}}</view>
       </view>
       <view class='news-box-bottom'>
-        <view wx:if="{{item.firstImage == ''}}">
-          <image class='news-image' src='../../images/none-image.jpg'></image>
-        </view>
-        <view wx:else="{{item.firstImage !== ''}}">
-          <image class='news-image' src='{{item.firstImage}}'></image>
-        </view>
+        <image wx:if="{{item.firstImage == ''}}" class='news-image' src='../../images/none-image.jpg'></image>
+        <image wx:else="{{item.firstImage == ''}}" class='news-image' src='{{item.firstImage}}'></image>
       </view>
     </view>
   </view>
@@ -121,20 +89,12 @@
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
-        <view wx:if="item.source == ''">
-          <view class='news-source'>来源无 {{item.time}}</view>
-        </view>
-        <view wx:else="item.source !== ''">
-          <view class='news-source'>{{item.source}} {{item.time}}</view>
-        </view>
+        <view wx:if="{{item.source !== ''}}" class='news-source'>{{item.source}} {{item.time}}</view>
+        <view wx:else="{{item.source === ''}}" class='news-source'>来源无 {{item.time}}</view>
       </view>
       <view class='news-box-bottom'>
-        <view wx:if="{{item.firstImage == ''}}">
-          <image class='news-image' src='../../images/none-image.jpg'></image>
-        </view>
-        <view wx:else="{{item.firstImage !== ''}}">
-          <image class='news-image' src='{{item.firstImage}}'></image>
-        </view>
+        <image wx:if="{{item.firstImage == ''}}" class='news-image' src='../../images/none-image.jpg'></image>
+        <image wx:else="{{item.firstImage == ''}}" class='news-image' src='{{item.firstImage}}'></image>
       </view>
     </view>
   </view>
@@ -142,20 +102,12 @@
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
-        <view wx:if="item.source == ''">
-          <view class='news-source'>来源无 {{item.time}}</view>
-        </view>
-        <view wx:else="item.source !== ''">
-          <view class='news-source'>{{item.source}} {{item.time}}</view>
-        </view>
+        <view wx:if="{{item.source !== ''}}" class='news-source'>{{item.source}} {{item.time}}</view>
+        <view wx:else="{{item.source === ''}}" class='news-source'>来源无 {{item.time}}</view>
       </view>
       <view class='news-box-bottom'>
-        <view wx:if="{{item.firstImage == ''}}">
-          <image class='news-image' src='../../images/none-image.jpg'></image>
-        </view>
-        <view wx:else="{{item.firstImage !== ''}}">
-          <image class='news-image' src='{{item.firstImage}}'></image>
-        </view>
+        <image wx:if="{{item.firstImage == ''}}" class='news-image' src='../../images/none-image.jpg'></image>
+        <image wx:else="{{item.firstImage == ''}}" class='news-image' src='{{item.firstImage}}'></image>
       </view>
     </view>
   </view>
