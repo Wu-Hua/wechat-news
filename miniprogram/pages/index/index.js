@@ -152,7 +152,6 @@ Page({
         const news = res.data.result;
         const newsLength = news.length;
         let gnNews = [];
-        console.log(res);
         for(let i = 0 ; i < newsLength; i++) {
           gnNews.push({
             id: news[i].id,
@@ -383,6 +382,12 @@ Page({
     this.setData({
       navItem : navItem,
       newsShow: newsShow
+    });
+  },
+
+  clickNews(target) {
+    wx.navigateTo({
+      url: '../newsDetail/newsDetail?id=' + target.currentTarget.dataset.id
     })
-  }
+  },
 })

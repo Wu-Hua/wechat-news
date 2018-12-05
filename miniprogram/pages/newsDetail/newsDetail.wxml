@@ -1,0 +1,25 @@
+<view class="nav">
+  <view bindtap="backIndex">
+    <button class='nav-button'>＜</button>
+    <view class='nav-title'>快读 · 资讯</view>
+  </view>
+</view>
+<view class='main'>
+  <view class='title'>{{title}}</view>
+  <view class='message'>
+    <view wx:if="source === ''" class='source'>来源无 {{date}}</view>
+    <view wx:else="source !== ''" class='source'>{{source}} {{date}}</view>
+    <view>阅读 {{readCount}}</view>
+  </view>
+  <view class='content' wx:for="{{content}}">
+    <block wx:if="{{item.type === 'p'}}">
+      <view class='{{item.type}}'>{{item.text}}</view>
+    </block>
+    <block wx:elif="{{item.type === 'image'}}">
+      <image class='{{item.type}}' src='{{item.src}}'></image>
+    </block>
+    <block wx:if="{{item.type === 'strong'}}" class='{{item.type}}'>
+      <view class='{{item.type}}'>{{item.text}}</view>
+    </block>
+  </view>
+</view>

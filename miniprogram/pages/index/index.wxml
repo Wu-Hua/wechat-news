@@ -17,7 +17,23 @@
 <!-- nav end  -->
 <!-- main -->
 <view class="main">
-  <view wx:for="{{gnNews}}" class="{{newsShow[0].show === true? '':'hide'}}">
+  <view wx:for="{{gnNews}}" class="{{newsShow[0].show === true? '':'hide'}}" bindtap="clickNews" data-id='{{item.id}}'>
+    <view class='news-box'>
+      <view class='news-box-top'>
+        <view class='news-title'>{{item.title}}</view>
+        <!-- <view wx:if="item.source == ''">
+          <view class='news-source'>来源无 {{item.time}}</view>
+        </view> -->
+        <view wx:if="item.source !== ''" class='news-source'>{{item.source}} {{item.time}}</view>
+        <view wx:else="item.source === ''" class='news-source'>来源无 {{item.time}}</view>
+      </view>
+      <view class='news-box-bottom'>
+        <image wx:if="{{item.firstImage == ''}}" class='news-image' src='../../images/none-image.jpg'></image>
+        <image wx:else="{{item.firstImage == ''}}" class='news-image' src='{{item.firstImage}}'></image>
+      </view>
+    </view>
+  </view>
+  <view wx:for="{{gjNews}}" class="{{newsShow[1].show === true? '':'hide'}}" bindtap="clickNews" data-id='{{item.id}}'>
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
@@ -38,7 +54,7 @@
       </view>
     </view>
   </view>
-  <view wx:for="{{gjNews}}" class="{{newsShow[1].show === true? '':'hide'}}">
+  <view wx:for="{{cjNews}}" class="{{newsShow[2].show === true? '':'hide'}}" bindtap="clickNews" data-id='{{item.id}}'>
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
@@ -59,7 +75,7 @@
       </view>
     </view>
   </view>
-  <view wx:for="{{cjNews}}" class="{{newsShow[2].show === true? '':'hide'}}">
+  <view wx:for="{{ylNews}}" class="{{newsShow[3].show === true? '':'hide'}}" bindtap="clickNews" data-id='{{item.id}}'>
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
@@ -80,7 +96,7 @@
       </view>
     </view>
   </view>
-  <view wx:for="{{ylNews}}" class="{{newsShow[3].show === true? '':'hide'}}">
+  <view wx:for="{{jsNews}}" class="{{newsShow[4].show === true? '':'hide'}}" bindtap="clickNews" data-id='{{item.id}}'>
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
@@ -101,7 +117,7 @@
       </view>
     </view>
   </view>
-  <view wx:for="{{jsNews}}" class="{{newsShow[4].show === true? '':'hide'}}">
+  <view wx:for="{{tyNews}}" class="{{newsShow[5].show === true? '':'hide'}}" bindtap="clickNews" data-id='{{item.id}}'>
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
@@ -122,28 +138,7 @@
       </view>
     </view>
   </view>
-  <view wx:for="{{tyNews}}" class="{{newsShow[5].show === true? '':'hide'}}">
-    <view class='news-box'>
-      <view class='news-box-top'>
-        <view class='news-title'>{{item.title}}</view>
-        <view wx:if="item.source == ''">
-          <view class='news-source'>来源无 {{item.time}}</view>
-        </view>
-        <view wx:else="item.source !== ''">
-          <view class='news-source'>{{item.source}} {{item.time}}</view>
-        </view>
-      </view>
-      <view class='news-box-bottom'>
-        <view wx:if="{{item.firstImage == ''}}">
-          <image class='news-image' src='../../images/none-image.jpg'></image>
-        </view>
-        <view wx:else="{{item.firstImage !== ''}}">
-          <image class='news-image' src='{{item.firstImage}}'></image>
-        </view>
-      </view>
-    </view>
-  </view>
-  <view wx:for="{{otherNews}}" class="{{newsShow[6].show === true? '':'hide'}}">
+  <view wx:for="{{otherNews}}" class="{{newsShow[6].show === true? '':'hide'}}" bindtap="clickNews" data-id='{{item.id}}'>
     <view class='news-box'>
       <view class='news-box-top'>
         <view class='news-title'>{{item.title}}</view>
