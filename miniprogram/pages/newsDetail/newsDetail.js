@@ -93,6 +93,9 @@ Page({
           content: news.content
         })
       },
+      fail: err => {
+        console.log(err)
+      },
       complete: () => {
         callback && callback();
       }

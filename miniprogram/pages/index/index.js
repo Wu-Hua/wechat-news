@@ -121,6 +121,9 @@ Page({
           News: News
         })
       },
+      fail: err => {
+        console.log(err);
+      },
       complete: () => {
         callback && callback();
       }

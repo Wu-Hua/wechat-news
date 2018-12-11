@@ -9,7 +9,7 @@
   <scroll-view scroll-x>
     <view class='nav-bottom'>
       <view class='nav-list'>
-        <view wx:for="{{navItem}}" class="{{item.styles}}" data-id="{{item.id}}" bindtap="clickNavBarItem">{{item.newType}}</view>
+        <view wx:for="{{navItem}}" wx:key="id" class="{{item.styles}}" data-id="{{item.id}}" bindtap="clickNavBarItem">{{item.newType}}</view>
       </view>
     </view>
   </scroll-view>
@@ -17,8 +17,8 @@
 <!-- nav end  -->
 <!-- main -->
 <view class="main">
-  <view wx:for="{{newsList}}" wx:for-item="list" class='{{list.type}}'>
-    <view wx:for="{{News}}" class="{{list.show === true? '':'hide'}}" bindtap="clickNews" data-id='{{item.id}}'>
+  <view wx:for="{{newsList}}" wx:key="type" wx:for-item="list" class='{{list.type}}'>
+    <view wx:for="{{News}}" wx:key="id" class="{{list.show === true? '':'hide'}}" bindtap="clickNews" data-id='{{item.id}}'>
       <view class='news-box'>
         <view class='news-box-top'>
           <view class='news-title'>{{item.title}}</view>
